@@ -26,7 +26,7 @@ end
     Post.create({
       title: Faker::Hipster.sentence(3),
       content: Faker::Hipster.paragraphs(4),
-      likes: 0,
+      likes: rand(5..60),
       blogger: blogger,
       destination: Destination.all.sample
     })

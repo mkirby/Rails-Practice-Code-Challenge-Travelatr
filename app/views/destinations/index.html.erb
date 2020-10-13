@@ -1,0 +1,12 @@
+<h1> All Destinations! </h1>
+<h1> ✈️🌍💫🌎💫🌏 </h1>
+
+
+<%#= @destinations %>
+
+
+<% @destinations.each do |dest| %>
+
+    <%= link_to dest.name, destination_path(dest) %><br>
+
+<% end %>

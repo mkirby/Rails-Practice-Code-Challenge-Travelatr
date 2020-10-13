@@ -1,0 +1,25 @@
+<h1>Travelatr</h1>
+<h2><%= @blogger.name %>'s Profile Page</h2>
+
+<p><strong><u>Total Likes:</u></strong> <%= @blogger.total_likes %></p>
+
+<p><strong><u>Featured Post:</u></strong></p>
+<%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %>
+
+<p><strong><u>Top <%= @blogger.top_five.count %> Destinations:</u></strong></p>
+<% @blogger.top_five.each do |dest| %>
+    <ul>
+        <li><%= dest %></li>
+    </ul>
+    
+<% end %>
+
+<p><strong><u>All Posts:</u></strong></p>
+<ul>
+    <% @blogger.posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %></li>
+    <ul>
+        <li>Likes: <%= post.likes %></li>
+    </ul>
+    <% end %>
+</ul>
